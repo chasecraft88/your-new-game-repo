@@ -52,36 +52,15 @@ class NPC(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
-        self.quest = None
-
-    def set_quest(self, quest):
-        self.quest = quest
 
     def interact(self):
-        if self.quest:
-            if self.quest.is_completed():
-                print(f"NPC: 'You have completed the quest: {self.quest.description}'")
-                return 'quest_complete'
-            else:
-                print(f"NPC: 'Quest in progress: {self.quest.description}'")
-                return 'quest_in_progress'
-        else:
-            print("NPC: 'I have nothing for you.'")
-            return 'no_quest'
-
-
-class Quest:
-    def __init__(self, description, objective_type, objective_count):
-        self.description = description
-        self.objective_type = objective_type
-        self.objective_count = objective_count
-        self.progress = 0
-
-    def update_progress(self):
-        self.progress += 1
-
-    def is_completed(self):
-        return self.progress >= self.objective_count
-
-    def get_progress(self):
-        return self.progress, self.objective_count
+        print("NPC: 'Hello, adventurer! How do you handle challenges?'")
+        print("1. Face them with courage (Good)")
+        print("2. Avoid them whenever possible (Bad)")
+        choice = input("Choose (1 or 2): ")
+        if choice == '1':
+            print("NPC: 'Good choice, the world around you brightens!'")
+            return 'good'
+        elif choice == '2':
+            print("NPC: 'Avoidance leads to darkness in your path.'")
+            return 'bad'
