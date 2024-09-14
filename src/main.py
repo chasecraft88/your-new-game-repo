@@ -1,11 +1,9 @@
+# src/main.py
 import pygame
 from game import Game
 
 def main():
-    # Initialize the game
     game = Game()
-
-    # Start the game loop
     game.run()
 
 if __name__ == "__main__":
