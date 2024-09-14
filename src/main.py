@@ -1,22 +1,12 @@
 import pygame
-import sys
+from game import Game
 
-# Initialize pygame
-pygame.init()
+def main():
+    # Initialize the game
+    game = Game()
 
-# Set up the display
-screen = pygame.display.set_mode((800, 600))
-pygame.display.set_caption('Pygame Test')
+    # Start the game loop
+    game.run()
 
-# Main loop
-while True:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
-    
-    # Fill the screen with color
-    screen.fill((0, 0, 255))
-    
-    # Update the display
-    pygame.display.flip()
+if __name__ == "__main__":
+    main()
