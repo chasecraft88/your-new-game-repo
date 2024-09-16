@@ -1,0 +1,17 @@
+.control-panel {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+}
+
+.control-panel label {
+  margin-left: 5px;
+}
+
+.control-panel input[type="checkbox"] {
+  margin-right: 5px;
+}
